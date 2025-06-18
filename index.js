@@ -1,6 +1,6 @@
 import express from "express";
 
-const POST = 8080;
+const PORT = 8080;
 
 const app = express();
 
