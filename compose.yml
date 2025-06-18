@@ -1,0 +1,34 @@
+networks:
+  graphql-net:
+    driver: bridge
+
+volumes:
+  graphql_node_modules_volume:
+
+x-graphql-common: &graphql_common
+  image: graphql_node
+  working_dir: "/usr/src/app"
+  volumes:
+    - ./:/usr/src/app
+    - graphql_node_modules_volume:/usr/src/app/node_modules
+
+services:
+  server:
+    <<: *graphql_common
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: dev
+    hostname: graphql
+    ports:
+      - 8080:8080
+    environment:
+      NODE_ENV: production
+    networks:
+      - graphql-net
+    command: npm start
+  npm:
+    <<: *graphql_common
+    networks:
+      - graphql-net
+    entrypoint: npm

@@ -1,0 +1,1 @@
+This is a GraphQL server implemented in Node.js
