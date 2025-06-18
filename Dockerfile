@@ -1,4 +1,4 @@
-FROM node:22-bookworm AS dev
+FROM node:lts-bookworm AS dev
 
 WORKDIR /usr/src/app
 
