@@ -24,7 +24,7 @@ services:
       - 8080:8080
     networks:
       - graphql-net
-    command: npm start
+    command: npm run start
   npm:
     <<: *graphql_common
     networks:
