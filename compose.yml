@@ -6,7 +6,7 @@ volumes:
   graphql_node_modules_volume:
 
 x-graphql-common: &graphql_common
-  image: graphql_node
+  image: graphql-node
   working_dir: "/usr/src/app"
   volumes:
     - ./:/usr/src/app
